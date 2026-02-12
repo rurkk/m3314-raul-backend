@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mock запрос">
+    <meta name="keywords" content="запрос">
+    <title>Mock запрос</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_fetch.css">
+    <script src="scripts/stats.js" defer></script>
+    <script src="scripts/fetch.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Mock запрос</h1>
+    <nav>
+        <ul>
+            <li><a href="about.html">О себе</a></li>
+            <li><a href="skills.html">Навыки</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="grid.html">Грид</a></li>
+            <li><a href="constructor.html">Конструктор</a></li>
+            <li><a href="fetch.html">Запрос</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="fetch">
+        <h2>Комментарии</h2>
+        <div id="preloader" style="display:none;">
+            <img src="https://i.gifer.com/YCZH.gif" alt="Loading..." />
+        </div>
+        <div id="error-message" style="display:none; color: red;">Что-то пошло не так!</div>
+        <div id="resultContainer"></div>
+    </section>
+</main>
+
+<footer>
+    <h5>Контакты</h5>
+    <address>
+        <p>Email: <a href="mailto:raulmullayanov@yandex.ru">raulmullayanov@yandex.ru</a></p>
+        <p>Телефон: <a href="tel:+79876222101">+7 (987) 622-21-01</a></p>
+    </address>
+    <div id="load-time"></div>
+</footer>
+
+</body>
+</html>
