@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Грид с таблицей данных">
+  <meta name="keywords" content="грид, таблица, данные">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+  {{> shared-bundles}}
+</head>
+<body>
+
+{{> header}}
+
+{{> content-container-open}}
+<section id="table">
+  <h2>Таблица с данными</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Возраст</th>
+          <th>Город</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each tableRows}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{age}}</td>
+          <td>{{city}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+{{> content-container-close}}
+
+{{> footer}}
+
+</body>
+</html>

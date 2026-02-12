@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>App</title>
-  </head>
-  <body>
-    {{ message }}
-  </body>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Резюме и портфолио разработчика">
+  <meta name="keywords" content="резюме, портфолио, разработчик, веб-разработка">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+  {{> shared-bundles}}
+</head>
+<body>
+
+{{> header}}
+
+{{> content-container-open}}
+<section id="about">
+  <h2>О себе</h2>
+  <p>Я <strong>веб-разработчик</strong> с опытом работы <em>0 лет</em>.</p>
+  <blockquote>
+    "Дело не в том, сколько ты знаешь, а в том, как ты это применяешь."
+  </blockquote>
+  <pre>
+    ___   _____ ______________     ___    ____  ______
+   /   | / ___// ____/  _/  _/    /   |  / __ \/_  __/
+  / /| | \__ \/ /    / / / /     / /| | / /_/ / / /
+ / ___ |___/ / /____/ /_/ /     / ___ |/ _, _/ / /
+/_/  |_/____/\____/___/___/    /_/  |_/_/ |_| /_/
+  </pre>
+</section>
+
+<section id="skills">
+  <h2>Навыки</h2>
+  <h3>Frontend</h3>
+  <ul>
+    {{#each skills.frontend}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <h3>Backend</h3>
+  <ul>
+    {{#each skills.backend}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</section>
+
+<section id="portfolio">
+  <h2>Портфолио</h2>
+  {{#each projects}}
+  {{> project-card}}
+  {{/each}}
+</section>
+
+<section id="table">
+  <h2>Таблица с данными</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Возраст</th>
+          <th>Город</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each tableRows}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{age}}</td>
+          <td>{{city}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+{{> content-container-close}}
+
+{{> footer}}
+
+</body>
 </html>

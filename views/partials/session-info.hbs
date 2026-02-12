@@ -1,0 +1,26 @@
+<div class="session-bar" aria-label="Информация о сессии">
+  {{#if session.isAuthenticated}}
+  <span class="session-auth-text">Вы вошли как <strong>{{session.userName}}</strong></span>
+  <a class="session-logout-link" href="{{session.logoutUrl}}">Выйти</a>
+  {{else}}
+  <form class="session-login-form" method="get" action="{{session.loginAction}}">
+    <input type="hidden" name="auth" value="1">
+    <input
+      class="session-input"
+      type="text"
+      name="user"
+      value="{{session.defaultUserName}}"
+      placeholder="Username"
+      required
+    >
+    <input
+      class="session-input"
+      type="password"
+      name="password"
+      placeholder="Password"
+    >
+    <button class="session-login-btn" type="submit">Login</button>
+    <a class="session-register-link" href="{{session.registerUrl}}">Регистрация</a>
+  </form>
+  {{/if}}
+</div>

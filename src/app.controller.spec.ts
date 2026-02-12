@@ -1,22 +1,27 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
 describe('AppController', () => {
   let appController: AppController;
 
-  beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
-    }).compile();
-
-    appController = app.get<AppController>(AppController);
+  beforeEach(() => {
+    appController = new AppController();
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('getIndexPage', () => {
+    it('should return guest session view model by default', () => {
+      const model = appController.getIndexPage({});
+
+      expect(model.session.isAuthenticated).toBe(false);
+      expect(model.session.loginUrl).toBe('/?auth=1&user=Raul');
+      expect(model.projects).toHaveLength(2);
+    });
+
+    it('should return authenticated session view model', () => {
+      const model = appController.getIndexPage({ auth: '1', user: 'Raul' });
+
+      expect(model.session.isAuthenticated).toBe(true);
+      expect(model.session.userName).toBe('Raul');
+      expect(model.menuItems[1].href).toContain('auth=1');
     });
   });
 });

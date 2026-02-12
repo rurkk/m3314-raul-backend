@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Навыки - Портфолио разработчика">
+  <meta name="keywords" content="навыки, портфолио, разработчик, веб-разработка">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+  {{> shared-bundles}}
+</head>
+<body>
+
+{{> header}}
+
+{{> content-container-open}}
+<section id="skills">
+  <h2>Навыки</h2>
+  <h3>Frontend</h3>
+  <ul>
+    {{#each skills.frontend}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Backend</h3>
+  <ul>
+    {{#each skills.backend}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</section>
+{{> content-container-close}}
+
+{{> footer}}
+
+</body>
+</html>

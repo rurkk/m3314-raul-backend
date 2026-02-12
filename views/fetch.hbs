@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mock запрос">
+  <meta name="keywords" content="запрос">
+  <title>{{pageTitle}}</title>
+  {{> shared-bundles}}
+  <link rel="stylesheet" href="/styles_fetch.css">
+  <script src="/scripts/fetch.js" defer></script>
+</head>
+<body>
+
+{{> header}}
+
+{{> content-container-open}}
+<section id="fetch">
+  <h2>Комментарии</h2>
+  <div id="preloader" style="display:none;">
+    <img src="https://i.gifer.com/YCZH.gif" alt="Loading...">
+  </div>
+  <div id="error-message" style="display:none; color: red;">Что-то пошло не так!</div>
+  <div id="resultContainer"></div>
+</section>
+{{> content-container-close}}
+
+{{> footer}}
+
+</body>
+</html>

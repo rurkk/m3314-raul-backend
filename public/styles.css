@@ -5,6 +5,10 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
 header {
     position: fixed;
     top: 0;
@@ -30,6 +34,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
     z-index: 1000;
 }
 
@@ -170,6 +175,16 @@ img {
         margin: 10px 0;
     }
 
+    .session-login-form {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .session-login-form .session-input {
+        width: 110px;
+        padding: 4px 6px;
+    }
+
     main {
         padding: 158px 20px 20px;
     }
@@ -217,4 +232,98 @@ table, th, td {
 th, td {
     padding: 12px;
     text-align: left;
+}
+.session-bar {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    align-items: center;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: 1010;
+    white-space: nowrap;
+    max-width: calc(100vw - 24px);
+}
+
+.session-bar a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.session-auth-text {
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.session-logout-link {
+    font-weight: 600;
+}
+
+.session-login-form {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.session-login-form .session-input {
+    width: 108px;
+    padding: 4px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.82rem;
+    line-height: 1.1;
+}
+
+.session-login-form .session-input::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.session-login-btn {
+    width: auto;
+    padding: 4px 9px;
+    border: none;
+    border-radius: 3px;
+    background: #ff2f83;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.82rem;
+    line-height: 1.1;
+}
+
+.session-register-link {
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 1100px) {
+    .session-bar {
+        position: static;
+        justify-content: center;
+        margin-top: 8px;
+        white-space: normal;
+    }
+
+    .session-login-form {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.project-card {
+    margin-bottom: 16px;
 }

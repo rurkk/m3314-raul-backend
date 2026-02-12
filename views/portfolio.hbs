@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Портфолио разработчика">
+  <meta name="keywords" content="портфолио, проекты, веб-разработка">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+  {{> shared-bundles}}
+</head>
+<body>
+
+{{> header}}
+
+{{> content-container-open}}
+<section id="portfolio">
+  <h2>Портфолио</h2>
+  {{#each projects}}
+  {{> project-card}}
+  {{/each}}
+</section>
+{{> content-container-close}}
+
+{{> footer}}
+
+</body>
+</html>
