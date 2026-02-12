@@ -10,7 +10,9 @@ async function bootstrap() {
   const viewsPath = join(process.cwd(), 'views');
   const partialsPath = join(viewsPath, 'partials');
 
-  app.useStaticAssets(join(process.cwd(), 'public'));
+  app.useStaticAssets(join(process.cwd(), 'public'), {
+    index: false,
+  });
   app.setBaseViewsDir(viewsPath);
   app.setViewEngine('hbs');
 
